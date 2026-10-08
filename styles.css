@@ -559,3 +559,56 @@ a:hover {
 .mb-1 { margin-bottom: var(--spacing-sm); }
 .mb-2 { margin-bottom: var(--spacing-md); }
 .mb-3 { margin-bottom: var(--spacing-lg); }
+/* Project 4 changes */
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 80px; }
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-menu { display: flex; align-items: center; }
+.nav-menu li { margin-left: 0; }
+.nav-link.active { background: rgba(255,255,255,0.2); }
+
+.hero { display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero-buttons { display: flex; gap: 1rem; justify-content: center; }
+.about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.form-group-full { grid-column: 1 / -1; }
+.contact-form .btn-primary { background: var(--primary-color); color: white; }
+.skill-progress { width: 0; animation: none; transition: width 1s ease; }
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary-color);
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .nav-menu.active { display: flex; }
+    .nav-menu li { width: 100%; margin: 0; padding: 0.5rem; }
+    .nav-link { display: block; }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .about-grid, .projects-grid, .form-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .form-group-full { grid-column: 1; }
+}
+
+@media (max-width: 480px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 2.5rem; }
+}
